@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 2353791359266694812}
   - component: {fileID: 6334011160379591445}
   - component: {fileID: 6334011160379591444}
+  - component: {fileID: 3549911562381991997}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,10 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21155c14189b46f4b927f6c0f3f756ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  dashSpeed: 7
-  circleRadius: 13
-  dashAmountInAngles: 22.5
+  isDashing: 0
 --- !u!114 &2353791359266694812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2419505ac89de314ab2e8df6e84156a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundWave: {fileID: 1039383017205010207, guid: c278663cda9cdc144838d6109ffa1e2b, type: 3}
-  enemyTransform: {fileID: 0}
+  playerSoundWave: {fileID: 1039383017205010207, guid: c278663cda9cdc144838d6109ffa1e2b, type: 3}
 --- !u!114 &6334011160379591445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,3 +363,19 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!54 &3549911562381991997
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6334011160379591468}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

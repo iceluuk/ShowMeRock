@@ -4,20 +4,30 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Transform enemy;
-    public float dashSpeed = 5f;
-    public float circleRadius = 13f;
-    public float dashAmountInAngles = 22.5f;
+    [HideInInspector] public bool isDashing = false;
+
+    [Tooltip("Variables assigned via Game Manager")]
+    //Variables set by gamemanager
+    private Transform enemy;
+    private float circleRadius;
+    private float dashAmountInAngles;
+    private float dashDuration = 0.2f; // Needs beat sync!
 
     private float currentDashAngle = 0f;
     private Vector3 initialPosition;
     private Vector3 targetPosition;
-    private bool isDashing = false;
     private float dashStartTime;
-    private float dashDuration = 0.2f; // Needs beat sync!
 
     private void Start()
     {
+        //Set variables form Game Manager
+        enemy = GameManager.Instance.enemyTransform;
+        circleRadius = GameManager.Instance.arenaRadius;
+        dashAmountInAngles = GameManager.Instance.laneAngle;
+
+        //Set transform off player
+        transform.rotation = enemy.rotation;
+        transform.position = enemy.position + transform.forward * circleRadius;
         initialPosition = transform.position;
     }
 
@@ -31,10 +41,10 @@ public class PlayerMovement : MonoBehaviour
         if (isDashing)
         {
             // Lerp towards the target position
-            float t = (Time.time - dashStartTime) / dashDuration;
-            transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            float timeSpendPercentage = (Time.time - dashStartTime) / dashDuration;
+            transform.position = Vector3.Lerp(initialPosition, targetPosition, timeSpendPercentage);
 
-            if (t >= 1f)
+            if (timeSpendPercentage >= 1f)
             {
                 isDashing = false;
             }
