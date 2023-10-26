@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    public int health;
     public GameObject enemySoundWave;
-    public float enemyProjectileLifeInSeconds = 6f; //needs beat sync
-    public float timePerAttackInSeconds = 1f; //needs beat sync
+    public float enemyProjectileLifeInSeconds = 6f; //needs beat sync (change to life in beats)
+    public float timePerAttackInSeconds = 1f; //needs beat sync (Change to attack per beats)
     
     private Transform playerTransform;
     private float laneAngle;
@@ -21,16 +20,6 @@ public class EnemyCombat : MonoBehaviour
         attackAngle = laneAngle;
 
         InvokeRepeating("Attack", 0f, timePerAttackInSeconds);
-    }
-
-    void Update()
-    {
-
-    }
-
-    void Damage(int attackDamage)
-    {
-        health -= attackDamage;
     }
 
     void Attack()

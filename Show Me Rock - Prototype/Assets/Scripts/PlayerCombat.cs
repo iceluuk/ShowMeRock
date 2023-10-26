@@ -5,9 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
+    //Needs to be restricted to only be able to attack on beat
 
+    
     public GameObject playerSoundWave;
 
+    //Assinged from start
     private Transform enemyTransform;
     private PlayerMovement playerMovement;
 
@@ -16,12 +19,6 @@ public class PlayerCombat : MonoBehaviour
     {
         playerMovement = gameObject.GetComponent<PlayerMovement>();
         enemyTransform = GameManager.Instance.enemyTransform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnAttack(InputAction.CallbackContext context)

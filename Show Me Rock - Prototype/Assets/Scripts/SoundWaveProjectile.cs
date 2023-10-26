@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class SoundWaveProjectile : MonoBehaviour
 {
-    public float timePerUnit = 0.5f; // Needs to be beat synced
-    public static float oneUnit = 1;
+    public float timePerUnit = 0.5f; // Needs to be beat synced (always synced with one beat)
+    public static float oneUnit = 1; // Set the speed of the projectile based on the distance per beat
     public bool isEnemyWave = false;
-
-    void Start(){
-
-    }
 
     void Update(){
         float distanceToMove = Time.deltaTime / timePerUnit * oneUnit;

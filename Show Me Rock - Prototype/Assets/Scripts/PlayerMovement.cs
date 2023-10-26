@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform enemy;
     private float circleRadius;
     private float dashAmountInAngles;
-    private float dashDuration = 0.2f; // Needs beat sync!
+    private float dashDuration = 0.2f; // Needs beat sync! (Dash Duration always is 1 beat)
 
     private float currentDashAngle = 0f;
     private Vector3 initialPosition;
@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        //Set variables form Game Manager
+        //Set variables from Game Manager
         enemy = GameManager.Instance.enemyTransform;
         circleRadius = GameManager.Instance.arenaRadius;
         dashAmountInAngles = GameManager.Instance.laneAngle;
 
-        //Set transform off player
+        //Set transform of player
         transform.rotation = enemy.rotation;
         transform.position = enemy.position + transform.forward * circleRadius;
         initialPosition = transform.position;

@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public Transform playerTransform;
     public Transform enemyTransform;
-    public int BPM;
+
+    public int BPM; //set the beat sync
+
+    //level settings
     public int lanesCount = 16;
     [HideInInspector] public float laneAngle;
     public float arenaRadius = 13f;
@@ -32,7 +35,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // Ensure only one instance of the GameManager exists
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
