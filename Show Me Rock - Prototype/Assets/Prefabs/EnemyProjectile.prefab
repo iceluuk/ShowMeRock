@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1039383017205010201}
   - component: {fileID: 1039383017205010206}
   - component: {fileID: 1039383017205010202}
+  - component: {fileID: 817617561493103017}
   m_Layer: 0
   m_Name: EnemyProjectile
   m_TagString: Untagged
@@ -110,5 +111,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5a6d07ebb29f34ead60350f804c1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pulseSize: 1.15
+  _pulseSpeed: 5
   timePerUnit: 0.25
   isEnemyWave: 1
+--- !u!114 &817617561493103017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039383017205010207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af212185eda6947b7772577af08327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventID: Beat
