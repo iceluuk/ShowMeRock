@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SoundWaveProjectile : MonoBehaviour
 {
+    private FlashEffect flash;
+    
     [SerializeField] private float _pulseSize = 1.15f;
     [SerializeField] private float _pulseSpeed = 5f;
     private Vector3 _startSize;
@@ -21,6 +23,7 @@ public class SoundWaveProjectile : MonoBehaviour
     private void Start()
     {
         // save original size of object
+        flash = GetComponent<FlashEffect>();
         _startSize = transform.localScale;
     }
 
@@ -53,10 +56,17 @@ public class SoundWaveProjectile : MonoBehaviour
         canPulse = false;
         Destroy(gameObject);
     }
-
+    
     public void Pulse()
     {
-        if(canPulse)
+        // TODO: Make the bullets flash. Make the flash obkect
+        
+        if (canPulse)
+        {
             transform.localScale = _startSize * _pulseSize;
+            // TODO: flashes are instant at this moment. Make them gradual.
+            //flash.Flash();
+        }
+        
     }
 }

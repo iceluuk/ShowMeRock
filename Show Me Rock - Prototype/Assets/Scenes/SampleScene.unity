@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd317279ea4686e47bd92915bd4d3e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventID: Shoot
+  eventID: Beat
 --- !u!1 &1317689350
 GameObject:
   m_ObjectHideFlags: 0
