@@ -111,10 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5a6d07ebb29f34ead60350f804c1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pulseSize: 1.15
-  _pulseSpeed: 5
+  _pulseSize: 1.35
+  _pulseSpeed: 3
   timePerUnit: 0.25
   isEnemyWave: 0
+  projectileLifeInSeconds: 6
 --- !u!114 &5778068927544358907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82af212185eda6947b7772577af08327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventID: Beat
+  eventID: Hits

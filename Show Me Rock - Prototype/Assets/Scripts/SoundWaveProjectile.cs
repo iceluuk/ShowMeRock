@@ -7,8 +7,8 @@ public class SoundWaveProjectile : MonoBehaviour
 {
     private FlashEffect flash;
     
-    [SerializeField] private float _pulseSize = 1.15f;
-    [SerializeField] private float _pulseSpeed = 5f;
+    [SerializeField] private float _pulseSize = 1.35f;
+    [SerializeField] private float _pulseSpeed = 3f;
     private Vector3 _startSize;
     
     public float timePerUnit = 0.5f; // Needs to be beat synced (always synced with one beat)
